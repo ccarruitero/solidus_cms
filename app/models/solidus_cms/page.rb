@@ -16,7 +16,7 @@ module SolidusCms
                                message: I18n.t('custom_pages.pages.slug_error') }
     scope :active, -> { where(active: true) }
 
-    serialize :metadata, JsonSerializer
+    serialize :metadata, coder: JsonSerializer
 
     def disabled?
       !active

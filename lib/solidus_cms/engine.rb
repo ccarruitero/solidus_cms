@@ -2,6 +2,8 @@
 
 require 'solidus_core'
 require 'solidus_support'
+require 'solidus_cms/json_serializer'
+require 'solidus_cms/railtie' if defined?(Rails::Railtie)
 
 module SolidusCms
   class Engine < Rails::Engine

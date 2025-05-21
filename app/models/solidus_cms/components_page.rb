@@ -15,7 +15,7 @@ module SolidusCms
     delegate :name, to: :component, prefix: true
     delegate :backend_template, :frontend_template, :full_width?, to: :presenter
 
-    serialize :metadata, JsonSerializer
+    serialize :metadata, coder: JsonSerializer
 
     scope :active, -> { where active: true }
     scope :top_level, -> { where parent_id: nil }

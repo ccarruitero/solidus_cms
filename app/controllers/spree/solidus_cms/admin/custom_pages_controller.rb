@@ -3,13 +3,15 @@
 module Spree::SolidusCms
   module Admin
     class CustomPagesController < SolidusCms.config.backend_controller_parent.constantize
-      destroy.before :track_discard_author
 
       private
 
       def model_class
         SolidusCms::Page
       end
+
+      alias authorization_subject model_class
+      alias resource_class model_class
 
       def object_name
         'page'
